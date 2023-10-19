@@ -1,0 +1,51 @@
+//Check if the input is pangram or not (A program is a sentence that contains all the alphabets from A to Z)
+import java.util.Scanner;
+public class PangramCheck
+{
+	public static void main (String [] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a sentence: ");
+		String sentence = sc.nextLine();
+		boolean pangram = pangram(sentence);
+
+		if(pangram)
+		{
+			System.out.println("The Sentence is a pangram ");
+		}
+		else
+		{
+			System.out.println("The Sentence is not a pangram " );
+		}
+}
+public static boolean pangram(String sentence)
+	{
+	sentence = sentence.toLowerCase();
+
+	boolean[] alphabetPresent = new boolean[26];
+	
+	for (int i=0;i<sentence.length();i++)
+	{
+		char c = sentence.charAt(i);
+		if (Character.isLetter(c))
+		{
+			int index = c - 'a';
+			alphabetPresent[index] =true;
+		
+		}
+	}
+
+	for (boolean present: alphabetPresent )
+	{
+		if(!present)
+		{
+			return false;
+		}
+	}
+		return true;
+}
+}
+
+
+	
+

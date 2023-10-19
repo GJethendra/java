@@ -1,0 +1,20 @@
+//1.Create an array with the values(1,2,3,4,5,6,7) and shuffle it.
+public class ShuffleArray
+{
+	public static void main(String[]args)
+	{
+		int [] mainArrays={1, 2, 3, 4, 5, 6, 7};
+		int number=mainArrays.length;
+		for (int i=number-1;i>0;i--)
+		{
+		 int j =(int) (Math.random() *(i+1));
+		 int temp = mainArrays[i];
+		 mainArrays[i] = mainArrays[j];
+		 mainArrays[j]=temp;
+		}
+		for (int value: mainArrays)
+		{
+			System.out.print(value + "  ");
+		}
+}
+}
